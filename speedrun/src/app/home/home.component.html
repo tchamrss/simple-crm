@@ -1,0 +1,27 @@
+<button mat-raised-button color="primary" routerLink="/signup">
+    signup
+</button>
+
+<button mat-raised-button color="primary" routerLink="/login">
+    login
+</button>
+
+<button mat-raised-button color="primary" routerLink="/dashboard">
+    Dashboard
+</button>
+
+
+<div *ngIf="(afAuth.user | async)">
+    User is loggged in
+
+    <br>
+
+    <button mat-raised-button color="primary" (click)="logout()">
+        log out
+    </button>
+
+</div>
+
+<div *ngIf="!(afAuth.user | async)">
+    User is not loggged in
+</div>
